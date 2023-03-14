@@ -1,3 +1,9 @@
+import os 
+import pandas as pd
+from PIL import Image
+from typing import Tuple
+
+
 class WSILevel:
     """
     A class representing one level of a whole-slide image.

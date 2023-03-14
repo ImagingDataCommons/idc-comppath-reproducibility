@@ -1,3 +1,6 @@
+import pandas as pd
+from typing import List
+
 class Predictions():
     """
     Class to organize the predictions that are returned by the network.

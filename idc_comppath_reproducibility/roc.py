@@ -1,3 +1,8 @@
+import numpy as np 
+import matplotlib.pyplot as plt
+from typing import List, Tuple
+
+
 class ROCAnalysis():
     """
     Class for the ROC analysis. 

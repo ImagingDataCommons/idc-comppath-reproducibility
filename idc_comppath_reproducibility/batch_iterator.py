@@ -1,3 +1,9 @@
+import numpy as np 
+from .wsi import WSI
+from PIL import Image
+from typing import Callable, List, Tuple
+
+
 class BatchIterator:
     """
     An iterator class to iterate sequentially over all WSI respectively their tiles during network inference.
