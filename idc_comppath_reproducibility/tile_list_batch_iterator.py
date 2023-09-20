@@ -12,7 +12,7 @@ from .global_variables import CLASS_LABEL_TO_INDEX_MAP, NUM_CLASSES
 
 class TileListBatchIterator: 
     """
-    An iterator class to iterate over all tiles contained in a TileList object during network inference. 
+    An iterator class to iterate over all tiles contained in a TileList object. 
 
     Attributes
     ----------

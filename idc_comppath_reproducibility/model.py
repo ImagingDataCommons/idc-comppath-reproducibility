@@ -54,6 +54,9 @@ class BaseModel:
         self.model.summary(print_fn=lambda line: lines.append(line))
         return os.linesep.join(lines)
 
+    def summarize_trainable_variables(self):
+        return sum(map(lambda x: x.sum(), self.model.get_weights()))
+    
     def train(
         self, 
         training_generator: Generator, 
@@ -121,6 +124,10 @@ class BaseModel:
         with open(os.path.join(output_path, 'training_config.txt'), 'w') as configs_file:
             json.dump(configs_to_store, configs_file)
 
+        with open(os.path.join(output_path, 'determinism_checksum.txt'), 'w') as determinism_check:
+            determinism_check.write('Summary of trainable variables before training: {}\n'
+                                    .format(self.summarize_trainable_variables()))
+        
         self.model.fit(
             training_generator,
             epochs=epochs,
@@ -130,8 +137,13 @@ class BaseModel:
             validation_data=validation_generator,
             validation_steps=validation_steps, 
             callbacks=[save_model_callback, csv_logger_callback], 
-            class_weight=class_weights
+            class_weight=class_weights, 
+            workers=1 
         )
+
+        with open(os.path.join(output_path, 'determinism_checksum.txt'), 'a') as determinism_check:
+            determinism_check.write('Summary of trainable variables after training: {}\n'
+                                    .format(self.summarize_trainable_variables()))
     
     def make_prediction(self, batch: np.ndarray) -> np.ndarray:
         """

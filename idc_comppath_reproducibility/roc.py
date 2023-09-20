@@ -245,4 +245,4 @@ def summarize_roc_values(roc_analysis1: ROCAnalysis, roc_analysis2: ROCAnalysis)
                     (roc_analysis2.name, 'confidence'): roc_analysis2.ci}
     results = pd.DataFrame(results_dict)
     results.rename(index=class_to_str_map, inplace=True)
-    return results.round(decimals=3)
+    return results
