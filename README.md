@@ -12,6 +12,6 @@ Each experiment is implemented as one Jupyter notebook file: [lung_cancer_experi
 Utility code for both experiments is contained in the package [idc_comppath_reproducibility](idc_comppath_reproducibility/) and can be re-used for similar computational pathology use cases with the IDC. Further information on how to run the experiments can be found in the respective notebook files.
 
 **Note:** 
-1. For an introduction to working with whole-slide images (WSIs) from the IDC using **most recent IDC-developed functionality** see [this notebook](https://github.com/ImagingDataCommons/IDC-Tutorials/blob/master/notebooks/pathomics/getting_started_with_digital_pathology.ipynb)
+1. For an introduction to working with whole-slide images (WSIs) from the IDC using **most recent IDC-developed functionality** see [this notebook](https://github.com/ImagingDataCommons/IDC-Tutorials/blob/master/notebooks/pathomics/getting_started_with_digital_pathology.ipynb).
 2. Earlier versions of the Jupyter notebooks and **source code used in the preprint of the publication** can be found in the ["preprint" branch](
 https://github.com/ImagingDataCommons/idc-comppath-reproducibility/tree/preprint).
